@@ -22,7 +22,7 @@ Original Approach
 for i in 0 ..< nums.count {
 	for j in i+1 ..< nums.coun {
 		if (nums[j] == target - nums[i]) {
-         return [i, j]
+         		return [i, j]
       }
    }
 }
@@ -50,7 +50,6 @@ let c = array[1]
 
 //or make a subscript extension 
 extension String {
-    
     subscript (i: Int) -> String {
         return String(self[index(startIndex, offsetBy: i)])
     }
@@ -103,18 +102,18 @@ To be honest there are a lot problems you can solve easily with recursions.
 Especially with tree data structure, for example inorder_preorder_postorder tree traversal problem. [Binary Tree Inorder Traversal - LeetCode](https://leetcode.com/problems/binary-tree-inorder-traversal/submissions/)
 ```swift
 //recursive
-    func inorderTraversal(_ root: TreeNode?) -> [Int] {
-        var ret = [Int]()
-        inorderTraversalHelper(root, &ret)
-        return ret
-    }
+func inorderTraversal(_ root: TreeNode?) -> [Int] {
+    var ret = [Int]()
+    inorderTraversalHelper(root, &ret)
+    return ret
+}
     
-    func inorderTraversalHelper(_ root: TreeNode?, _ ret: inout [Int]){
-        if root == nil { return }
-        inorderTraversalHelper(root?.left, &ret)
-        ret.append(root!.val)
-        inorderTraversalHelper(root?.right, &ret)
-    }
+func inorderTraversalHelper(_ root: TreeNode?, _ ret: inout [Int]){
+    if root == nil { return }
+    inorderTraversalHelper(root?.left, &ret)
+    ret.append(root!.val)
+    inorderTraversalHelper(root?.right, &ret)
+}
 
 ```
 #### Backtracking
@@ -130,22 +129,22 @@ With the following template, a lot of other similar problems can be solved.
 
 ```swift
 func subsets2(nums: [Int]) -> [[Int]] {
-        var res = [[Int]]()
-        var path = [Int]()
-        let nums = nums.sorted(by: <)
-        _dfs(&res, &path, nums2: nums, 0)
-        return res
-    }
+    var res = [[Int]]()
+    var path = [Int]()
+    let nums = nums.sorted(by: <)
+    _dfs(&res, &path, nums2: nums, 0)
+    return res
+}
     
-    private func _dfs(_ res: inout [[Int]], _ path: inout [Int], nums2: [Int], _ index: Int) {
-        res.append(Array(path))
+private func _dfs(_ res: inout [[Int]], _ path: inout [Int], nums2: [Int], _ index: Int) {
+   res.append(Array(path))
         
-        for i in index ..< nums2.count {
-            path.append(nums2[i])
-            _dfs(&res, &path, nums2: nums2, i + 1)
-            path.removeLast()
-        }
+   for i in index ..< nums2.count {
+      path.append(nums2[i])
+      _dfs(&res, &path, nums2: nums2, i + 1)
+      path.removeLast()
     }
+}
 
 ```
 
@@ -318,12 +317,12 @@ for i in stride(from: 5, through: 0, by: -1) {
 //prints 5, 4, 3, 2, 1, 0
 ```
 
-14. When doing 2 pointers, mid element should be calculated in the following way:
+#### When doing 2 pointers, mid element should be calculated in the following way:
 ```swift 
 let mi = lo + (hi - lo) / 2
 ```
 
-15. Simple way to trim an array from an index 
+#### Simple way to trim an array from an index 
 ```swift 
 nums[i...] = []
 //to clean array after i index.
