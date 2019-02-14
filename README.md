@@ -329,13 +329,13 @@ nums[i...] = []
 ```
 
 ### LinkedList
-- 141. Linked List Cycle[Linked List Cycle - LeetCode](https://leetcode.com/problems/linked-list-cycle/) 
+- [x] 141. Linked List Cycle[Linked List Cycle - LeetCode](https://leetcode.com/problems/linked-list-cycle/) 
 Solution: 
-- 206. Reverse Linked List[Reverse Linked List - LeetCode](https://leetcode.com/problems/reverse-linked-list/)
+- [x] 206. Reverse Linked List[Reverse Linked List - LeetCode](https://leetcode.com/problems/reverse-linked-list/)
 Solution: 
-- 160. Intersection of Two Linked Lists[Intersection of Two Linked Lists - LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+- [x] 160. Intersection of Two Linked Lists[Intersection of Two Linked Lists - LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 Solution: 
-- 237. Delete Node in a Linked List[Delete Node in a Linked List - LeetCode](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+- [x] 237. Delete Node in a Linked List[Delete Node in a Linked List - LeetCode](https://leetcode.com/problems/delete-node-in-a-linked-list/)
 -Solution: 
 
 ### Stack
