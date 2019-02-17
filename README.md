@@ -7,22 +7,21 @@ There is one more thing I want to mention is each time after you code your solut
 
 Here is some cheatsheet from [BigO CheatSheet](http://bigocheatsheet.com/)
 
-![Image of bigO](https://raw.githubusercontent.com/alexliubj/Leetcode-Swift-Solution/master/BigOComplexityChart.png)
-![Image of Cheatsheet](https://raw.githubusercontent.com/alexliubj/Leetcode-Swift-Solution/master/Common%20DS%20Operations.png)
+Image of bigO
+Image of Cheatsheet
 
-
-#### Use `dictionary or set` instead of 2 for loops. 
+#### Use `dictionary or set` instead of 2 for loops.
 [Two Sum - LeetCode](https://leetcode.com/problems/two-sum/)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-Original Approach 
+Original Approach
 ```swift
 for i in 0 ..< nums.count {
-	for j in i+1 ..< nums.coun {
-		if (nums[j] == target - nums[i]) {
-         		return [i, j]
+    for j in i+1 ..< nums.coun {
+        if (nums[j] == target - nums[i]) {
+                return [i, j]
       }
    }
 }
@@ -41,10 +40,9 @@ for (index, value) in nums.enumerated(){
                 dict[value] = index
             }
         }
-```
-#### Indexes of String in Swift 4
-Unfortunately,  you can not directly access characters by index with subscript in `String` in swift4. You need either make an `String` Extension or convert string into an Array. 
-```swift 
+```#### Indexes of String in Swift 4
+Unfortunately,  you can not directly access characters by index with subscript in `String` in swift4. You need either make an `String` Extension or convert string into an Array.
+```swift
 let array = Array(str)
 let c = array[1]
 
@@ -71,11 +69,10 @@ extension String {
 "abcde"[0]      // a
 "abcde"[0...2]  // ab
 "abcde"[2..<4]  // cd
-```
-#### About Heap, Stack, Queue or PriorityQueue in Swift
+```#### About Heap, Stack, Queue or PriorityQueue in Swift
 Unfortunately, there’s also no such sort of algorithm
-For stack or queue, we can easily use array alternatively. 
-```swift 
+For stack or queue, we can easily use array alternatively.
+```swift
 var stack = [Int]()
     
 func push(a: Int) {
@@ -115,10 +112,8 @@ func inorderTraversalHelper(_ root: TreeNode?, _ ret: inout [Int]){
     inorderTraversalHelper(root?.right, &ret)
 }
 
-```
-#### Backtracking
-
-With the following template, a lot of other similar problems can be solved. 
+```#### Backtracking
+With the following template, a lot of other similar problems can be solved.
 
 1. [Subsets - LeetCode](https://leetcode.com/problems/subsets/)
 2. [Subsets II - LeetCode](https://leetcode.com/problems/subsets-ii/)
@@ -147,7 +142,6 @@ private func _dfs(_ res: inout [[Int]], _ path: inout [Int], nums2: [Int], _ ind
 }
 
 ```
-
 
 #### Sliding window
 (Solution provided by : [ChaoyangHe - Profile - LeetCode](https://leetcode.com/chaoyanghe))
@@ -202,7 +196,7 @@ public List<Integer> slidingWindowTemplateByHarryChaoyangHe(String s, String t) 
     }
 ```
 
-Swift version template: 
+Swift version template:
 ```swift
 func minWindow(_ s: String, _ t: String) -> String {
         if s.count == 0 || t.count == 0 { return "" }
@@ -258,14 +252,14 @@ func minWindow(_ s: String, _ t: String) -> String {
         return String(s[head ... head + length - 1])
     }
 ```
-This can be also used to solve the following problems: 
+This can be also used to solve the following problems:
 
 1. [Minimum Window Substring - LeetCode](https://leetcode.com/problems/minimum-window-substring/)
 2. [Longest Substring Without Repeating Characters - LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 3. [Substring with Concatenation of All Words - LeetCode](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
 4. [Longest substring](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
 5. [Find All Anagrams in a String - LeetCode](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-#### Binary search / Quick Sort 
+#### Binary search / Quick Sort
 Sometime the they may ask you to solve the problem within O(logN) or O(NlogN) so the first thing come into your mind is :
 For Binary search:  average time complexity is O(log n) and for quick sort, average time complexity is O(NlogN)
 
@@ -281,15 +275,13 @@ var ints = [UInt32]()
 for scalars in lowerS.unicodeScalars {
     ints.append(scalars.value)
 }
-```
-#### To Remove empty string and none letters characters
-```swift 
+```#### To Remove empty string and none letters characters
+```swift
 let cleaned = s.lowercased().filter{ c in
     return c.description.rangeOfCharacter(from: CharacterSet.alphanumerics) != nil && String(c) != “”
 }
-```
-#### How to create initialized 2d array
-```swift 
+```#### How to create initialized 2d array
+```swift
 var visited: [[Bool]] = Array(repeating: Array(repeating: false, count: grid[0].count), count: grid.count)
 ```
 
@@ -318,25 +310,25 @@ for i in stride(from: 5, through: 0, by: -1) {
 ```
 
 #### When doing 2 pointers, mid element should be calculated in the following way:
-```swift 
+```swift
 let mi = lo + (hi - lo) / 2
 ```
 
-#### Simple way to trim an array from an index 
-```swift 
+#### Simple way to trim an array from an index
+```swift
 nums[i...] = []
 //to clean array after i index.
 ```
 
 ### LinkedList
-- [ ] 141. [Linked List Cycle - LeetCode](https://leetcode.com/problems/linked-list-cycle/) 
-Solution: 
+- [x] 141. [Linked List Cycle - LeetCode](https://leetcode.com/problems/linked-list-cycle/)
+Solution:   [Swift](https://github.com/alexliubj/Leetcode-Swift-Solution/blob/master/LinkedList/141-%20Linked%20List%20Cycle.swift)
 - [x] 206. [Reverse Linked List - LeetCode](https://leetcode.com/problems/reverse-linked-list/)
-Solution: 
-- [ ] 160. [Intersection of Two Linked Lists - LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists/)
-Solution: 
-- [ ] 237. [Delete Node in a Linked List - LeetCode](https://leetcode.com/problems/delete-node-in-a-linked-list/)
--Solution: 
+Solution:  [Swift](https://github.com/alexliubj/Leetcode-Swift-Solution/blob/master/LinkedList/206-%20Reverse%20linked%20list.swift)
+- [x] 160. [Intersection of Two Linked Lists - LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+Solution:  [Swift](https://github.com/alexliubj/Leetcode-Swift-Solution/blob/master/LinkedList/160-%20Intersection%20of%20two%20Linked%20list.swift)
+- [x] 237. [Delete Node in a Linked List - LeetCode](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+-Solution:   [Swift](https://github.com/alexliubj/Leetcode-Swift-Solution/blob/master/LinkedList/237.%20Delete%20Node%20in%20a%20Linked%20List.swift)
 
 ### Stack
 
@@ -347,6 +339,7 @@ Solution:
 ### String
 
 ### Tree
+
 
 ### Math
 
