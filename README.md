@@ -40,7 +40,8 @@ for (index, value) in nums.enumerated(){
                 dict[value] = index
             }
         }
-```#### Indexes of String in Swift 4
+```
+#### Indexes of String in Swift 4
 Unfortunately,  you can not directly access characters by index with subscript in `String` in swift4. You need either make an `String` Extension or convert string into an Array.
 ```swift
 let array = Array(str)
@@ -69,7 +70,8 @@ extension String {
 "abcde"[0]      // a
 "abcde"[0...2]  // ab
 "abcde"[2..<4]  // cd
-```#### About Heap, Stack, Queue or PriorityQueue in Swift
+```
+#### About Heap, Stack, Queue or PriorityQueue in Swift
 Unfortunately, there’s also no such sort of algorithm
 For stack or queue, we can easily use array alternatively.
 ```swift
@@ -112,7 +114,8 @@ func inorderTraversalHelper(_ root: TreeNode?, _ ret: inout [Int]){
     inorderTraversalHelper(root?.right, &ret)
 }
 
-```#### Backtracking
+```
+#### Backtracking
 With the following template, a lot of other similar problems can be solved.
 
 1. [Subsets - LeetCode](https://leetcode.com/problems/subsets/)
